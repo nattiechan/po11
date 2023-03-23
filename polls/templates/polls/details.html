@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Neuton:wght@700&display=swap"
+  rel="stylesheet"
+/>
+<body>
+  <section class="container">
+    <h1>{{ question.question_text }}</h1>
+    <ul class="question-list">
+      {% for choice in question.choice_set.all %}
+      <li>{{ choice.choice_text }}</li>
+      {% endfor %}
+    </ul>
+    <div class="button-center">
+      <button onclick="history.back()">Back</button>
+    </div>
+  </section>
+</body>
