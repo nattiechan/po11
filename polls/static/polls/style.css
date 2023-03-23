@@ -87,3 +87,11 @@ button:hover {
   background-color: #637771;
   color: #d1c9d8;
 }
+
+/* 
+* Remove text underline for button that goes straight to index.html 
+* This is somewhat of a workaround to accommodate HTML templates
+*/
+#to-homepage::before {
+  height: 0;
+}

@@ -39,11 +39,11 @@ class QuestionModelTest(TestCase):
         question.choice_set.create(choice_text=choice_text, votes=votes)
         self.assertEqual(Choice.objects.count(), 3)
         self.assertEqual(Choice.objects.get(choice_text=choice_text).votes, votes)
-   
+
     def test_insert_duplicate_question_text_fails(self):
         with self.assertRaises(IntegrityError):
             Question.objects.create(question_text=self.QUESTION_TEXT, pub_date=timezone.now())
-  
+
     def test_insert_duplicate_choice_text_fails(self):
         with self.assertRaises(IntegrityError):
             question: Question = Question.objects.get(question_text=self.QUESTION_TEXT)

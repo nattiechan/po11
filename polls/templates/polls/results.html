@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Neuton:wght@700&display=swap"
+  rel="stylesheet"
+/>
+<body>
+  <section class="container">
+    <h1>Vote Results!</h1>
+    <h2>Question: {{ question.question_text }}</h2>
+    <h3>Check back later for results!</h3>
+    <div class="button-center">
+      <a id="to-homepage" href="{% url 'polls:index' %}">
+        <button>Back</button>
+      </a>
+    </div>
+  </section>
+</body>
